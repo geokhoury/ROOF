@@ -16,8 +16,13 @@
 	href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
 	rel="stylesheet">
 
+
+
 <!-- bootstrap -->
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+<!-- datepicker -->
+<link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/d004434a5ff76e7b97c8b07c01f34ca69e635d97/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+
 
 <!-- animate.css -->
 <link rel="stylesheet" href="assets/animate/animate.css" />
@@ -30,8 +35,15 @@
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-
 <link rel="stylesheet" href="assets/style.css">
+<!-- jQuery -->
+<script src="assets/jquery.js"></script>
+<!-- boostrap -->
+<script src="assets/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+<!-- moments -->
+<script src="assets/bootstrap/js/moment.js" type="text/javascript"></script>
+<!-- datepicker -->
+<script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/d004434a5ff76e7b97c8b07c01f34ca69e635d97/src/js/bootstrap-datetimepicker.js"></script>
 
 </head>
 
@@ -67,8 +79,8 @@
 						<ul class="nav navbar-nav navbar-right scroll">
 							<li class="active"><a href="#works">Find</a></li>
 							<li><a href="#about">About</a></li>
-							<li><a href="#partners">Partners</a></li>
-							<li><a href="#contact">Contact</a></li>
+							<li><a href="#team">Team</a></li>
+							<li><a href='#loginForm' data-toggle="modal" data-target="#loginForm" data-backdrop="true">Login</a></li>
 						</ul>
 					</div>
 					<!-- #Nav Ends -->
@@ -82,12 +94,27 @@
 
 	<!-- Buildings -->
 	<%@include file='buildings.jsp'%>
-	<!-- Buildings -->
+	<!-- #Buildings -->
+
+	<!-- Modals -->
+
+	<!-- Rooms In Building Modal -->
+	<%@include file='room.jsp'%>
+	<!-- #Rooms In Building Modal -->
+
+	<!-- Room Schedule -->
+	<%@include file='roomSchedule.jsp'%>
+	<!-- #Room Schedule -->
+
+	<!-- Reservation Modal -->
+	<%@include file='reserve.jsp'%>
+	<!-- #Reservation Modal -->
+
+	<!-- #Modals -->
 
 	<!-- Cirlce Starts -->
 	<div id="about" class="container spacer about">
-		<h2 class="text-center wowload fadeInUp">Creative digital agency
-			based on London</h2>
+		<h2 class="text-center wowload fadeInUp">ROOF</h2>
 		<div class="row">
 			<div class="col-sm-6 wowload fadeInLeft">
 				<h4>
@@ -138,7 +165,7 @@
 						<h4>24 Clients</h4>
 					</div>
 					<div class="col-sm-3 col-xs-6">
-						<i class="fa fa-rocket  fa-5x"></i>
+						<a href="/game.html"><i class="fa fa-rocket  fa-5x"></i></a>
 						<h4>75 Projects</h4>
 					</div>
 					<div class="col-sm-3 col-xs-6">
@@ -157,113 +184,14 @@
 
 
 
-
-
-
-
-	<div id="partners" class="container spacer ">
-		<h2 class="text-center  wowload fadeInUp">Some of our happy
-			clients</h2>
-		<div class="clearfix">
-			<div class="col-sm-6 partners  wowload fadeInLeft">
-				<img src="images/partners/1.jpg" alt="partners"> <img
-					src="images/partners/2.jpg" alt="partners"> <img
-					src="images/partners/3.jpg" alt="partners"> <img
-					src="images/partners/4.jpg" alt="partners">
-			</div>
-			<div class="col-sm-6">
-
-
-				<div id="carousel-testimonials"
-					class="carousel slide testimonails  wowload fadeInRight"
-					data-ride="carousel">
-					<div class="carousel-inner">
-						<div class="item active animated bounceInRight row">
-							<div class="animated slideInLeft col-xs-2">
-								<img alt="portfolio" src="images/team/1.jpg" width="100"
-									class="img-circle img-responsive">
-							</div>
-							<div class="col-xs-10">
-								<p>I must explain to you how all this mistaken idea of
-									denouncing pleasure and praising pain was born and I will give
-									you a complete account of the system, and expound the actual
-									teachings of the great explorer of the truth, the
-									master-builder of human happiness.</p>
-								<span>Angel Smith - <b>eshop Canada</b></span>
-							</div>
-						</div>
-						<div class="item  animated bounceInRight row">
-							<div class="animated slideInLeft col-xs-2">
-								<img alt="portfolio" src="images/team/2.jpg" width="100"
-									class="img-circle img-responsive">
-							</div>
-							<div class="col-xs-10">
-								<p>No one rejects, dislikes, or avoids pleasure itself,
-									because it is pleasure, but because those who do not know how
-									to pursue pleasure rationally encounter consequences that are
-									extremely painful.</p>
-								<span>John Partic - <b>Crazy Pixel</b></span>
-							</div>
-						</div>
-						<div class="item  animated bounceInRight row">
-							<div class="animated slideInLeft  col-xs-2">
-								<img alt="portfolio" src="images/team/3.jpg" width="100"
-									class="img-circle img-responsive">
-							</div>
-							<div class="col-xs-10">
-								<p>On the other hand, we denounce with righteous indignation
-									and dislike men who are so beguiled and demoralized by the
-									charms of pleasure of the moment, so blinded by desire, that
-									they cannot foresee the pain and trouble that are bound to
-									ensue.</p>
-								<span>Harris David - <b>Jet London</b></span>
-							</div>
-						</div>
-					</div>
-
-					<!-- Indicators -->
-					<ol class="carousel-indicators">
-						<li data-target="#carousel-testimonials" data-slide-to="0"
-							class="active"></li>
-						<li data-target="#carousel-testimonials" data-slide-to="1"></li>
-						<li data-target="#carousel-testimonials" data-slide-to="2"></li>
-					</ol>
-					<!-- Indicators -->
-				</div>
-
-
-
-			</div>
-		</div>
-
-
 		<!-- team -->
 		<%@include file='team.jsp'%>
 		<!-- team -->
 
-	</div>
 
 	<!--Contact Starts-->
-	<div id="contact" class="spacer">
-
-		<div class="container contactform center">
-			<h2 class="text-center  wowload fadeInUp">Get in touch to start
-				your project</h2>
-			<div class="row wowload fadeInLeftBig">
-				<div class="col-sm-6 col-sm-offset-3 col-xs-12">
-					<input type="text" placeholder="Name"> <input type="text"
-						placeholder="Company">
-					<textarea rows="5" placeholder="Message"></textarea>
-					<button class="btn btn-primary">
-						<i class="fa fa-paper-plane"></i> Send
-					</button>
-				</div>
-			</div>
-
-
-
-		</div>
-	</div>
+	<%@include file='loginForm.jsp'%>
+	<%@include file='signupForm.jsp'%>
 	<!--Contact Ends-->
 
 	<!-- Footer Starts -->
@@ -284,14 +212,10 @@
 	</div>
 
 	<!-- jquery -->
-	<script src="assets/jquery.js"></script>
+
 
 	<!-- wow script -->
 	<script src="assets/wow/wow.min.js"></script>
-
-
-	<!-- boostrap -->
-	<script src="assets/bootstrap/js/bootstrap.js" type="text/javascript"></script>
 
 	<!-- jquery mobile -->
 	<script src="assets/mobile/touchSwipe.min.js"></script>
@@ -302,6 +226,14 @@
 
 	<!-- custom script -->
 	<script src="assets/script.js"></script>
+
+	<!-- listRoomByBuilding script -->
+	<script src="assets/rooms.js"></script>
+
+	<script src="assets/roomSchedule.js"></script>
+
+	<script src="assets/reserve.js"></script>
+
 
 </body>
 </html>

@@ -1,0 +1,31 @@
+@import "assets/style.css";
+
+.row{
+  margin-top:40px;
+  padding: 0 10px;
+
+}
+.clickable{
+  cursor: pointer;
+}
+
+.panel-heading div {
+ margin-top: -18px;
+  font-size: 15px;
+}
+.panel-heading div span{
+  margin-left:5px;
+}
+.panel-body{
+  display: none;
+}
+
+#reserveModal {
+top:20%;
+outline: none;
+}
+
+#roomSchedule {
+top:10%;
+outline: none;
+}
