@@ -47,7 +47,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>schedule</servlet-name>
-		<url-pattern>s/schedule/*</url-pattern>
+		<url-pattern>/schedule/*</url-pattern>
 	</servlet-mapping>
 
 	<servlet>

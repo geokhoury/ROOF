@@ -11,14 +11,14 @@
 
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h2 class="modal-title" id="roomSchedule-title"><center>Sign in now!</center></h2>
+            <h2 class="modal-title" id="loginForm-title"><center>Sign in now!</center></h2>
           </div>
 
           <div class="modal-body" id='login-modal-body'>
-            <div class='row'>
+            <%-- <div class='row'> --%>
 
-              <div class="col-md-8 col-md-offset-2">
-            <form action='login' method='POST' id='login-form'>
+
+            <!--<form action='login' method='POST' id='login-form'>
 
 
                   <div class="form-group">
@@ -30,16 +30,21 @@
                     <div class="help-block with-errors"></div>
                   </div>
                   <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Sign in!</button>
+
                   </div>
                   <div class='form-group'>
                     <a style='padding-bottom:50px;' data-toggle="modal" data-target="#signupForm" data-backdrop="true" > <center>Not a member?</center> </a>
                   </div>
 
-            </form>
-
+            </form>-->
+            <%-- <button type="button" class="btn btn-primary" onclick='checkLoginState();'>Sign in!</button> --%>
+            <div class='container col-md-offset-4'>
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" data-auto-logout-link='true' data-size='xlarge' style=''>
+            </fb:login-button>
           </div>
-        </div>
+
+
+        <%-- </div> --%>
           </div>
         </div>
       </div>

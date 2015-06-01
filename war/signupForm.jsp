@@ -11,14 +11,12 @@
 
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h2 class="modal-title" id="roomSchedule-title"><center>Sign up now!</center></h2>
+            <h2 class="modal-title" id="roomSchedule-title"><center>We'll miss you!</center></h2>
           </div>
 
           <div class="modal-body" id='signup-modal-body'>
-            <div class='row'>
-
-              <div class="col-md-8 col-md-offset-2">
-            <form action='login' method='POST' id='signup-form'>
+          
+            <%-- <form action='login' method='POST' id='signup-form'>
 
 
                   <div class="form-group">
@@ -36,7 +34,12 @@
                     <a data-dismiss="modal" style='padding-bottom:50px;'> <center>Already a memeber?</center> </a>
                   </div>
 
-            </form>
+            </form> --%>
+
+            <div class='container col-md-offset-4'>
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" data-auto-logout-link='true' data-size='xlarge' style=''>
+            </fb:login-button>
+            </div>
 
           </div>
         </div>

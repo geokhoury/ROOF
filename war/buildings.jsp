@@ -4,7 +4,7 @@
 	<figure class="effect-oscar  wowload fadeIn">
 		<img src="images/portfolio/1.png" alt="img01" />
 		<figcaption>
-			<h2>Buidling A</h2>
+			<h2>Building A</h2>
 			<p>
 				Administration Building<br> <a data-toggle="modal" data-target="#room" data-backdrop="true" id='A' onclick="myFunction(this.id);">
 

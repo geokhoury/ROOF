@@ -13,7 +13,7 @@
 
 <!-- font awesome -->
 <link
-	href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
 	rel="stylesheet">
 
 
@@ -48,6 +48,101 @@
 </head>
 
 <body>
+	<div id="fb-root"></div>
+	<!-- Facebook Script -->
+	<script>
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+			$('#loginSignUpHead').text("Sign out!");
+			$('#loginSignUpHead').attr("data-target", '#signupForm' );
+      // Logged into your app and Facebook.
+      testAPI();
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+      //document.getElementById('status').innerHTML = 'Please log ' +
+        //'into this app.';
+				$('#loginSignUpHead').text("Sign in!");
+				$('#loginSignUpHead').attr("data-target", '#loginForm' );
+    } else {
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+    //  document.getElementById('status').innerHTML = 'Please log ' +
+      //  'into Facebook.';
+			$('#loginSignUpHead').text("Sign in!");$('#loginSignUpHead').attr("data-target", '#loginForm' );
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+		$('#loginForm').modal('hide');
+		$('#signupForm').modal('hide');
+    FB.getLoginStatus(function(response) {
+
+      statusChangeCallback(response);
+    });
+  }
+
+
+
+  window.fbAsyncInit = function() {
+
+		FB._https = (window.location.protocol == "https:");
+
+	  FB.init({
+	    appId      : '900889656640933',
+	    cookie     : true,  // enable cookies to allow the server to access the session
+
+
+	    xfbml      : true,  // parse social plugins on this page
+	    version    : 'v2.2' // use version 2.2
+	  });
+
+	  // Now that we've initialized the JavaScript SDK, we call
+	  // FB.getLoginStatus().  This function gets the state of the
+	  // person visiting this page and can return one of three states to
+	  // the callback you provide.  They can be:
+	  //
+	  // 1. Logged into your app ('connected')
+	  // 2. Logged into Facebook, but not your app ('not_authorized')
+	  // 3. Not logged into Facebook and can't tell if they are logged into
+	  //    your app or not.
+	  //
+	  // These three cases are handled in the callback function.
+
+	  FB.getLoginStatus(function(response) {
+	    statusChangeCallback(response);
+	  });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+    FB.api('/me', function(response) {
+      document.getElementById('loginSignUpHead').innerHTML =
+        'Welcome, ' + response.name + '!';
+    });
+
+
+  }
+</script>
+
 	<div class="topbar animated fadeInLeftBig"></div>
 
 	<!-- Header Starts -->
@@ -59,7 +154,7 @@
 				<div class="container">
 					<div class="navbar-header">
 						<!-- Logo Starts -->
-						<a class="navbar-brand" href="#home"><img
+						<a class="navbar-brand" href="#home"><im§g
 							src="images/logo.png" alt="logo"></a>
 						<!-- #Logo Ends -->
 
@@ -80,7 +175,7 @@
 							<li class="active"><a href="#works">Find</a></li>
 							<li><a href="#about">About</a></li>
 							<li><a href="#team">Team</a></li>
-							<li><a href='#loginForm' data-toggle="modal" data-target="#loginForm" data-backdrop="true">Login</a></li>
+							<li><a href='#loginForm' data-toggle="modal" data-target="#loginForm" data-backdrop="true" id='loginSignUpHead'></a></li>
 						</ul>
 					</div>
 					<!-- #Nav Ends -->
@@ -113,8 +208,16 @@
 	<!-- #Modals -->
 
 	<!-- Cirlce Starts -->
+
+
 	<div id="about" class="container spacer about">
+		<br>
 		<h2 class="text-center wowload fadeInUp">ROOF</h2>
+
+
+
+		<div id="status">
+		</div>
 		<div class="row">
 			<div class="col-sm-6 wowload fadeInLeft">
 				<h4>
